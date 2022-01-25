@@ -7,3 +7,5 @@
 <a href="https://asciinema.org/a/BAe4XEYticmNuxMOjgpyR1kjw" target="_blank"><img src="https://asciinema.org/a/BAe4XEYticmNuxMOjgpyR1kjw.svg" /></a>
 //progression-game
 <a href="https://asciinema.org/a/Qu8HiDVtdboAn84DtDRYXwtSo" target="_blank"><img src="https://asciinema.org/a/Qu8HiDVtdboAn84DtDRYXwtSo.svg" /></a>
+//brain-prime
+<a href="https://asciinema.org/a/464172" target="_blank"><img src="https://asciinema.org/a/464172.svg" /></a>
