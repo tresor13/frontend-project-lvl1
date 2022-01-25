@@ -9,7 +9,7 @@ npm link
 
 to start any of games just insert ther names to Terminal
 
-brain-even
+brain-even + installation video tutorial;
 <a href="https://asciinema.org/a/lGPvZUoDTR5Sq9XHhT3NqPUax" target="_blank"><img src="https://asciinema.org/a/lGPvZUoDTR5Sq9XHhT3NqPUax.svg" /></a>
 
 brain-calc
