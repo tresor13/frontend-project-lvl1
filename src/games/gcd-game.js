@@ -13,7 +13,7 @@ function roundGCD() {
 
   const maxCommonDivider = commonDividers[commonDividers.length - 1];
   const userAnswer = readlineSync.question(
-    `Question: ${firstRandomNum}  ${secondRandomNum} \nYour answer:  `,
+    `Question: ${firstRandomNum} ${secondRandomNum} \nYour answer:  `,
   );
   if (Number(userAnswer) === maxCommonDivider) {
     console.log('Correct!');
