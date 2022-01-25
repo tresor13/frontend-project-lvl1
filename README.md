@@ -5,3 +5,5 @@
 <a href="https://asciinema.org/a/lGPvZUoDTR5Sq9XHhT3NqPUax" target="_blank"><img src="https://asciinema.org/a/lGPvZUoDTR5Sq9XHhT3NqPUax.svg" /></a>
 //calculator-game
 <a href="https://asciinema.org/a/BAe4XEYticmNuxMOjgpyR1kjw" target="_blank"><img src="https://asciinema.org/a/BAe4XEYticmNuxMOjgpyR1kjw.svg" /></a>
+//progression-game
+<a href="https://asciinema.org/a/Qu8HiDVtdboAn84DtDRYXwtSo" target="_blank"><img src="https://asciinema.org/a/Qu8HiDVtdboAn84DtDRYXwtSo.svg" /></a>

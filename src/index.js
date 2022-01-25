@@ -9,7 +9,11 @@ export function greetings() {
 
 export function getRandomNumber() {
   const num = Math.floor(Math.random() * 100) + 1;
-  // console.log(num);
+  return num;
+}
+
+export function getSmallRandomNumber() {
+  const num = Math.floor(Math.random() * 10) + 1;
   return num;
 }
 
