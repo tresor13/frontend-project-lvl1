@@ -10,7 +10,7 @@
 
 <h3><b>To istall any of these games:</b></h3>
 <p>1. Please clone repository from https://github.com/tresor13/frontend-project-lvl1</p>
-<p>2. Now run Terminal and go to directory <b>frontend-project-lvl1<</b>
+<p>2. Now run Terminal and go to directory <b>frontend-project-lvl1</b>
 <p>3. Now run these commands in Terminal:
 <b>npm ci</b> and 
 <b>npm link</b>
