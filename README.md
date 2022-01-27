@@ -14,7 +14,7 @@
 <p>3. Now run these commands in Terminal:
 <b>npm ci</b> and 
 <b>npm link</b>
-<p>4. To start any of games just insert their titles to Terminal (For example: brain-calc)</p>
+<p>4. To start any of these games just insert its title to Terminal (For example: brain-calc)</p>
 
 <h2>brain-even + installation video tutorial;</h2>
 <a href="https://asciinema.org/a/lGPvZUoDTR5Sq9XHhT3NqPUax" target="_blank"><img src="https://asciinema.org/a/lGPvZUoDTR5Sq9XHhT3NqPUax.svg" /></a>
