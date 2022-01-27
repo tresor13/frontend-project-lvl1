@@ -1,6 +1,6 @@
 # frontend-project-lvl1
 
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+<a href="https://codeclimate.com/github/tresor13/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/d92c79914d9a34316bdd/maintainability" /></a>
 
 to istall any of these games please clone repository from https://github.com/tresor13/frontend-project-lvl1
 after please run these commands in terminal:
