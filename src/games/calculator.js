@@ -5,7 +5,7 @@ const gameTask = 'What is the result of the expression?';
 
 function getMathematicalAction() {
   const items = ['+', '-', '*'];
-  const item = items[getRandomNumber(0, items.length)];
+  const item = items[getRandomNumber(0, items.length - 1)];
   return item;
 }
 
