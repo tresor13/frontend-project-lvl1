@@ -8,12 +8,12 @@
 
 <h1>Welcome to my first project "Brain Games"!</h1>
 
-<title><b>To istall any of these games:</b>
-1. Please clone repository from https://github.com/tresor13/frontend-project-lvl1
-2. Now run these commands in terminal:
-<b>npm ci</b>
-<b>npm link</b>
-3. To start any of games just insert their titles to Terminal (For example: brain-calc)</title>
+<h3><b>To istall any of these games:</b></h3>
+<p>1. Please clone repository from https://github.com/tresor13/frontend-project-lvl1</p>
+<p>2. Now run these commands in terminal:
+\n<b>npm ci</b>
+\n<b>npm link</b>
+<p>3. To start any of games just insert their titles to Terminal (For example: brain-calc)</p>
 
 <h2>brain-even + installation video tutorial;</h2>
 <a href="https://asciinema.org/a/lGPvZUoDTR5Sq9XHhT3NqPUax" target="_blank"><img src="https://asciinema.org/a/lGPvZUoDTR5Sq9XHhT3NqPUax.svg" /></a>
