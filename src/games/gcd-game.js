@@ -1,9 +1,11 @@
 import readlineSync from 'readline-sync';
-import { getRandomNumber, greetings, getScore } from '../index.js';
+import { getRandomNumber, gameProcess } from '../index.js';
+
+const gameTask = 'Find the greatest common divisor of given numbers.';
 
 function roundGCD() {
-  const firstRandomNum = getRandomNumber();
-  const secondRandomNum = getRandomNumber();
+  const firstRandomNum = getRandomNumber(1, 100);
+  const secondRandomNum = getRandomNumber(1, 100);
   const commonDividers = [];
   for (let divider = 1; divider <= firstRandomNum; divider += 1) {
     if (firstRandomNum % divider === 0 && secondRandomNum % divider === 0) {
@@ -26,7 +28,5 @@ function roundGCD() {
 }
 
 export default function gameGCD() {
-  const userName = greetings();
-  console.log('Find the greatest common divisor of given numbers.');
-  getScore(roundGCD, userName);
+  gameProcess(roundGCD, gameTask);
 }

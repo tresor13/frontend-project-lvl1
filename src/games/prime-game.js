@@ -1,8 +1,10 @@
 import readlineSync from 'readline-sync';
-import { getRandomNumber, greetings, getScore } from '../index.js';
+import { getRandomNumber, gameProcess } from '../index.js';
+
+const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 export function primeRound() {
-  const randomNumber = getRandomNumber();
+  const randomNumber = getRandomNumber(1, 100);
   let numberOfDividers = 0;
   for (let oneByOne = 1; oneByOne <= randomNumber; oneByOne += 1) {
     if (randomNumber % oneByOne === 0) {
@@ -30,7 +32,5 @@ export function primeRound() {
 }
 
 export default function gamePrime() {
-  const userName = greetings();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  getScore(primeRound, userName);
+  gameProcess(primeRound, gameTask);
 }

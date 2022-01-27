@@ -1,15 +1,17 @@
 import readlineSync from 'readline-sync';
-import { getRandomNumber, greetings, getScore } from '../index.js';
+import { getRandomNumber, gameProcess } from '../index.js';
+
+const gameTask = 'What is the result of the expression?';
 
 function getMathematicalAction() {
   const items = ['+', '-', '*'];
-  const item = items[Math.floor(Math.random() * items.length)];
+  const item = items[getRandomNumber(0, items.length)];
   return item;
 }
 
 export function calculatorRound() {
-  const randomNumberOne = getRandomNumber();
-  const randomNumberTwo = getRandomNumber();
+  const randomNumberOne = getRandomNumber(1, 100);
+  const randomNumberTwo = getRandomNumber(1, 100);
   const mathAction = getMathematicalAction();
   let result = 0;
   switch (mathAction) {
@@ -40,7 +42,5 @@ export function calculatorRound() {
 }
 
 export default function gameCalculator() {
-  const userName = greetings();
-  console.log('What is the result of the expression?');
-  getScore(calculatorRound, userName);
+  gameProcess(calculatorRound, gameTask);
 }

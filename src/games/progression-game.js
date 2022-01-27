@@ -1,14 +1,11 @@
 import readlineSync from 'readline-sync';
-import {
-  getRandomNumber,
-  getSmallRandomNumber,
-  greetings,
-  getScore,
-} from '../index.js';
+import { getRandomNumber, gameProcess } from '../index.js';
+
+const gameTask = 'What number is missing in the progression?';
 
 export function progressionRound() {
-  const originalNumber = getRandomNumber();
-  const differenceNum = getSmallRandomNumber();
+  const originalNumber = getRandomNumber(1, 100);
+  const differenceNum = getRandomNumber(1, 10);
   const matrixOfValues = [originalNumber];
   for (let numberOfValue = 0; numberOfValue < 9; numberOfValue += 1) {
     const nextValue = matrixOfValues[numberOfValue] + differenceNum;
@@ -31,7 +28,5 @@ export function progressionRound() {
 }
 
 export default function progressionGame() {
-  const userName = greetings();
-  console.log('What number is missing in the progression?');
-  getScore(progressionRound, userName);
+  gameProcess(progressionRound, gameTask);
 }

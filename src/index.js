@@ -7,13 +7,8 @@ export function greetings() {
   return userName;
 }
 
-export function getRandomNumber() {
-  const num = Math.floor(Math.random() * 100) + 1;
-  return num;
-}
-
-export function getSmallRandomNumber() {
-  const num = Math.floor(Math.random() * 10) + 1;
+export function getRandomNumber(min, max) {
+  const num = Math.floor(Math.random() * max) + min;
   return num;
 }
 
@@ -31,4 +26,10 @@ export function getScore(gameFunc, userName) {
   } else {
     console.log(`Congratulations, ${userName}!`);
   }
+}
+
+export function gameProcess(roundFunction, gameTask) {
+  const userName = greetings();
+  console.log(gameTask);
+  getScore(roundFunction, userName);
 }
