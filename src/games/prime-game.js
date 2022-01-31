@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
-import { getRandomNumber, gameProcess } from '../index.js';
+import { gameProcess } from '../index.js';
+import getRandomNumber from '../getRandomNumber.js';
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -14,20 +15,16 @@ export function primeRound() {
   const userAnswer = readlineSync.question(
     `Question: ${randomNumber} \nYour answer: `,
   );
-  if (
-    (userAnswer === 'yes' && numberOfDividers <= 2)
-    || (userAnswer === 'no' && numberOfDividers > 2)
-  ) {
-    return true;
+  let roundResult = '';
+  if (numberOfDividers <= 2) {
+    roundResult += 'yes';
+  } else {
+    roundResult += 'no';
   }
-  if (userAnswer !== 'yes' && numberOfDividers <= 2) {
-    console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was 'yes'.`,
-    );
-    return false;
+  if (userAnswer === roundResult) {
+    return { result: true, userAnswer, roundResult };
   }
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was 'no'.`);
-  return false;
+  return { result: false, userAnswer, roundResult };
 }
 
 export default function gamePrime() {

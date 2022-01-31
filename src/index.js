@@ -7,18 +7,17 @@ export function greetings() {
   return userName;
 }
 
-export function getRandomNumber(min, max) {
-  const num = Math.floor(Math.random() * max) + min;
-  return num;
-}
-
 export function getScore(gameFunc, userName) {
   let score = 0;
   while (score < 3) {
-    if (gameFunc() === true) {
+    const gameFuncResult = gameFunc();
+    if (gameFuncResult.result === true) {
       console.log('Correct!');
       score += 1;
     } else {
+      console.log(
+        `"${gameFuncResult.userAnswer}" is a wrong answer ;(. Correct answer was "${gameFuncResult.roundResult}"`,
+      );
       break;
     }
   }

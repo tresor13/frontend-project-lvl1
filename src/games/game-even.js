@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
-import { getRandomNumber, gameProcess } from '../index.js';
+import { gameProcess } from '../index.js';
+import getRandomNumber from '../getRandomNumber.js';
 
 const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -8,19 +9,16 @@ function roundEven() {
   const userAnswer = readlineSync.question(
     `Question: ${randomNumber} \nYour answer: `,
   );
-  let result = '';
+  let roundResult = '';
   if (randomNumber % 2 === 0) {
-    result += 'yes';
+    roundResult += 'yes';
   } else {
-    result += 'no';
+    roundResult += 'no';
   }
-  if (userAnswer === result) {
-    return true;
+  if (userAnswer === roundResult) {
+    return { result: true, userAnswer, roundResult };
   }
-  console.log(
-    `'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'`,
-  );
-  return false;
+  return { result: false, userAnswer, roundResult };
 }
 
 export default function gameEven() {

@@ -1,7 +1,8 @@
 import readlineSync from 'readline-sync';
-import { getRandomNumber, gameProcess } from '../index.js';
+import { gameProcess } from '../index.js';
+import getRandomNumber from '../getRandomNumber.js';
 
-const gameTask = 'What is the result of the expression?';
+const gameTask = 'What is the roundResult of the expression?';
 
 function getMathematicalAction() {
   const items = ['+', '-', '*'];
@@ -13,16 +14,16 @@ export function calculatorRound() {
   const randomNumberOne = getRandomNumber(1, 100);
   const randomNumberTwo = getRandomNumber(1, 100);
   const mathAction = getMathematicalAction();
-  let result = 0;
+  let roundResult = 0;
   switch (mathAction) {
     case '+':
-      result += randomNumberOne + randomNumberTwo;
+      roundResult += randomNumberOne + randomNumberTwo;
       break;
     case '-':
-      result += randomNumberOne - randomNumberTwo;
+      roundResult += randomNumberOne - randomNumberTwo;
       break;
     case '*':
-      result += randomNumberOne * randomNumberTwo;
+      roundResult += randomNumberOne * randomNumberTwo;
       break;
     default:
       return 'math action error';
@@ -31,13 +32,10 @@ export function calculatorRound() {
   const userAnswer = readlineSync.question(
     `Question: ${expression} \nYour answer: `,
   );
-  if (Number(userAnswer) === result) {
-    return true;
+  if (Number(userAnswer) === roundResult) {
+    return { result: true, userAnswer, roundResult };
   }
-  console.log(
-    `'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'`,
-  );
-  return false;
+  return { result: false, userAnswer, roundResult };
 }
 
 export default function gameCalculator() {
