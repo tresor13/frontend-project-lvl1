@@ -18,7 +18,6 @@ function roundGCD() {
     `Question: ${firstRandomNum} ${secondRandomNum} \nYour answer:  `,
   );
   if (Number(userAnswer) === maxCommonDivider) {
-    console.log('Correct!');
     return true;
   }
   console.log(

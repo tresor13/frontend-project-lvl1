@@ -18,7 +18,6 @@ export function progressionRound() {
     `Question: ${matrixOfValues.join(' ')} \nYour answer: `,
   );
   if (Number(userAnswer) === result) {
-    console.log('Correct!');
     return true;
   }
   console.log(

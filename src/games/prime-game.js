@@ -18,7 +18,6 @@ export function primeRound() {
     (userAnswer === 'yes' && numberOfDividers <= 2)
     || (userAnswer === 'no' && numberOfDividers > 2)
   ) {
-    console.log('Correct!');
     return true;
   }
   if (userAnswer !== 'yes' && numberOfDividers <= 2) {

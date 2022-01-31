@@ -16,6 +16,7 @@ export function getScore(gameFunc, userName) {
   let score = 0;
   while (score < 3) {
     if (gameFunc() === true) {
+      console.log('Correct!');
       score += 1;
     } else {
       break;

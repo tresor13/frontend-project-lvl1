@@ -8,20 +8,18 @@ function roundEven() {
   const userAnswer = readlineSync.question(
     `Question: ${randomNumber} \nYour answer: `,
   );
-  if (
-    (userAnswer === 'yes' && randomNumber % 2 === 0)
-    || (userAnswer === 'no' && randomNumber % 2 === 1)
-  ) {
-    console.log('Correct!');
+  let result = '';
+  if (randomNumber % 2 === 0) {
+    result += 'yes';
+  } else {
+    result += 'no';
+  }
+  if (userAnswer === result) {
     return true;
   }
-  if (userAnswer !== 'yes' && randomNumber % 2 === 0) {
-    console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was 'yes'.`,
-    );
-    return false;
-  }
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was 'no'.`);
+  console.log(
+    `'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'`,
+  );
   return false;
 }
 

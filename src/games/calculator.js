@@ -32,7 +32,6 @@ export function calculatorRound() {
     `Question: ${expression} \nYour answer: `,
   );
   if (Number(userAnswer) === result) {
-    console.log('Correct!');
     return true;
   }
   console.log(
