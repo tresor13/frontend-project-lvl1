@@ -1,22 +1,23 @@
 import readlineSync from 'readline-sync';
 
-export function greetings() {
+export default function gameProcess(gameFunc, gameTask) {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  return userName;
-}
-
-export function getScore(gameFunc, userName) {
+  const amountOfRounds = 3;
   let score = 0;
-  while (score < 3) {
-    const gameFuncResult = gameFunc();
-    if (gameFuncResult.result === true) {
+  console.log(gameTask);
+  while (score < amountOfRounds) {
+    const roundCondition = gameFunc();
+    const userAnswer = readlineSync.question(
+      `Question: ${roundCondition.roundQuestion} \nYour answer: `,
+    );
+    if (userAnswer === roundCondition.roundResult) {
       console.log('Correct!');
       score += 1;
     } else {
       console.log(
-        `"${gameFuncResult.userAnswer}" is a wrong answer ;(. Correct answer was "${gameFuncResult.roundResult}"`,
+        `"${userAnswer}" is a wrong answer ;(. Correct answer was "${roundCondition.roundResult}"`,
       );
       break;
     }
@@ -26,10 +27,4 @@ export function getScore(gameFunc, userName) {
   } else {
     console.log(`Congratulations, ${userName}!`);
   }
-}
-
-export function gameProcess(roundFunction, gameTask) {
-  const userName = greetings();
-  console.log(gameTask);
-  getScore(roundFunction, userName);
 }

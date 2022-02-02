@@ -1,5 +1,4 @@
-import readlineSync from 'readline-sync';
-import { gameProcess } from '../index.js';
+import gameProcess from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const gameTask = 'What number is missing in the progression?';
@@ -13,15 +12,12 @@ export function progressionRound() {
     matrixOfValues.push(nextValue);
   }
   const positionOfDeletedValue = Math.floor(Math.random() * 9);
-  const roundResult = originalNumber + positionOfDeletedValue * differenceNum;
-  matrixOfValues[positionOfDeletedValue] = '..';
-  const userAnswer = readlineSync.question(
-    `Question: ${matrixOfValues.join(' ')} \nYour answer: `,
+  const roundResult = String(
+    originalNumber + positionOfDeletedValue * differenceNum,
   );
-  if (Number(userAnswer) === roundResult) {
-    return { result: true, userAnswer, roundResult };
-  }
-  return { result: false, userAnswer, roundResult };
+  matrixOfValues[positionOfDeletedValue] = '..';
+  const roundQuestion = `${matrixOfValues.join(' ')} `;
+  return { roundQuestion, roundResult };
 }
 
 export default function progressionGame() {

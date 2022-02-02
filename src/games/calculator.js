@@ -1,5 +1,4 @@
-import readlineSync from 'readline-sync';
-import { gameProcess } from '../index.js';
+import gameProcess from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const gameTask = 'What is the roundResult of the expression?';
@@ -14,28 +13,23 @@ export function calculatorRound() {
   const randomNumberOne = getRandomNumber(1, 100);
   const randomNumberTwo = getRandomNumber(1, 100);
   const mathAction = getMathematicalAction();
-  let roundResult = 0;
+  let roundResult = '';
   switch (mathAction) {
     case '+':
-      roundResult += randomNumberOne + randomNumberTwo;
+      roundResult += String(randomNumberOne + randomNumberTwo);
       break;
     case '-':
-      roundResult += randomNumberOne - randomNumberTwo;
+      roundResult += String(randomNumberOne - randomNumberTwo);
       break;
     case '*':
-      roundResult += randomNumberOne * randomNumberTwo;
+      roundResult += String(randomNumberOne * randomNumberTwo);
       break;
     default:
       return 'math action error';
   }
   const expression = `${randomNumberOne} ${mathAction} ${randomNumberTwo}`;
-  const userAnswer = readlineSync.question(
-    `Question: ${expression} \nYour answer: `,
-  );
-  if (Number(userAnswer) === roundResult) {
-    return { result: true, userAnswer, roundResult };
-  }
-  return { result: false, userAnswer, roundResult };
+  const roundQuestion = expression;
+  return { roundQuestion, roundResult };
 }
 
 export default function gameCalculator() {

@@ -1,5 +1,4 @@
-import readlineSync from 'readline-sync';
-import { gameProcess } from '../index.js';
+import gameProcess from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const gameTask = 'Find the greatest common divisor of given numbers.';
@@ -14,14 +13,9 @@ function roundGCD() {
     }
   }
 
-  const roundResult = commonDividers[commonDividers.length - 1];
-  const userAnswer = readlineSync.question(
-    `Question: ${firstRandomNum} ${secondRandomNum} \nYour answer:  `,
-  );
-  if (Number(userAnswer) === roundResult) {
-    return { result: true, userAnswer, roundResult };
-  }
-  return { result: false, userAnswer, roundResult };
+  const roundResult = String(commonDividers[commonDividers.length - 1]);
+  const roundQuestion = `${firstRandomNum} ${secondRandomNum}`;
+  return { roundQuestion, roundResult };
 }
 
 export default function gameGCD() {
