@@ -3,22 +3,23 @@ import getRandomNumber from '../getRandomNumber.js';
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export function primeRound() {
-  const randomNumber = getRandomNumber(1, 100);
-  let numberOfDividers = 0;
-  for (let oneByOne = 1; oneByOne <= randomNumber; oneByOne += 1) {
-    if (randomNumber % oneByOne === 0) {
-      numberOfDividers += 1;
+const ifNumIsEven = (num) => {
+  const numberOfDividers = [];
+  for (let oneByOne = 1; oneByOne <= num; oneByOne += 1) {
+    if (num % oneByOne === 0) {
+      numberOfDividers.push(oneByOne);
     }
   }
-  const roundQuestion = randomNumber;
-  let roundResult = '';
-  if (numberOfDividers <= 2) {
-    roundResult += 'yes';
-  } else {
-    roundResult += 'no';
+  if (numberOfDividers.length <= 2) {
+    return 'yes';
   }
-  return { roundQuestion, roundResult };
+  return 'no';
+};
+
+export function primeRound() {
+  const randomNumber = getRandomNumber(1, 100);
+  const roundResult = ifNumIsEven(randomNumber);
+  return { roundQuestion: randomNumber, roundResult };
 }
 
 export default function gamePrime() {

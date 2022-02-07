@@ -1,4 +1,3 @@
-export default function getRandomNumber(min, max) {
-  const num = Math.floor(Math.random() * max) + min;
-  return num;
-}
+const getRandomNumber = (min, max) => Math.floor(Math.random() * max) + min;
+
+export default getRandomNumber;

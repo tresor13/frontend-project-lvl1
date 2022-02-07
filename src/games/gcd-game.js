@@ -3,17 +3,22 @@ import getRandomNumber from '../getRandomNumber.js';
 
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
-function roundGCD() {
-  const firstRandomNum = getRandomNumber(1, 100);
-  const secondRandomNum = getRandomNumber(1, 100);
+const getGreatestDivider = (numOne, numTwo) => {
   const commonDividers = [];
-  for (let divider = 1; divider <= firstRandomNum; divider += 1) {
-    if (firstRandomNum % divider === 0 && secondRandomNum % divider === 0) {
+  for (let divider = 1; divider <= numOne; divider += 1) {
+    if (numOne % divider === 0 && numTwo % divider === 0) {
       commonDividers.push(divider);
     }
   }
+  return commonDividers[commonDividers.length - 1];
+};
 
-  const roundResult = String(commonDividers[commonDividers.length - 1]);
+function roundGCD() {
+  const firstRandomNum = getRandomNumber(1, 100);
+  const secondRandomNum = getRandomNumber(1, 100);
+  const roundResult = String(
+    getGreatestDivider(firstRandomNum, secondRandomNum),
+  );
   const roundQuestion = `${firstRandomNum} ${secondRandomNum}`;
   return { roundQuestion, roundResult };
 }

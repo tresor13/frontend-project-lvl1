@@ -3,32 +3,25 @@ import getRandomNumber from '../getRandomNumber.js';
 
 const gameTask = 'What is the roundResult of the expression?';
 
-function getMathematicalAction() {
-  const items = ['+', '-', '*'];
-  const item = items[getRandomNumber(0, items.length - 1)];
-  return item;
-}
-
-export function calculatorRound() {
-  const randomNumberOne = getRandomNumber(1, 100);
-  const randomNumberTwo = getRandomNumber(1, 100);
-  const mathAction = getMathematicalAction();
-  let roundResult = '';
+const calculator = (numOne, numTwo, mathAction) => {
   switch (mathAction) {
     case '+':
-      roundResult += String(randomNumberOne + randomNumberTwo);
-      break;
+      return String(numOne + numTwo);
     case '-':
-      roundResult += String(randomNumberOne - randomNumberTwo);
-      break;
+      return String(numOne - numTwo);
     case '*':
-      roundResult += String(randomNumberOne * randomNumberTwo);
-      break;
+      return String(numOne * numTwo);
     default:
       return 'math action error';
   }
-  const expression = `${randomNumberOne} ${mathAction} ${randomNumberTwo}`;
-  const roundQuestion = expression;
+};
+export function calculatorRound() {
+  const randomNumOne = getRandomNumber(1, 100);
+  const randomNumTwo = getRandomNumber(1, 100);
+  const items = ['+', '-', '*'];
+  const mathAction = items[getRandomNumber(0, items.length - 1)];
+  const roundResult = calculator(randomNumOne, randomNumTwo, mathAction);
+  const roundQuestion = `${randomNumOne} ${mathAction} ${randomNumTwo}`;
   return { roundQuestion, roundResult };
 }
 
