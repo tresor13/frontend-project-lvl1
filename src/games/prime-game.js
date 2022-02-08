@@ -11,14 +11,14 @@ const ifNumIsEven = (num) => {
     }
   }
   if (numberOfDividers.length <= 2) {
-    return 'yes';
+    return true;
   }
-  return 'no';
+  return false;
 };
 
 export function primeRound() {
   const randomNumber = getRandomNumber(1, 100);
-  const roundResult = ifNumIsEven(randomNumber);
+  const roundResult = ifNumIsEven(randomNumber) ? 'yes' : 'no';
   return { roundQuestion: randomNumber, roundResult };
 }
 

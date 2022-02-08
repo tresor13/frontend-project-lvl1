@@ -5,7 +5,8 @@ const gameTask = 'Find the greatest common divisor of given numbers.';
 
 const getGreatestDivider = (numOne, numTwo) => {
   const commonDividers = [];
-  for (let divider = 1; divider <= numOne; divider += 1) {
+  const smallestNumber = numOne < numTwo ? numOne : numTwo;
+  for (let divider = 1; divider <= smallestNumber; divider += 1) {
     if (numOne % divider === 0 && numTwo % divider === 0) {
       commonDividers.push(divider);
     }

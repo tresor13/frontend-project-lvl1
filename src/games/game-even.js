@@ -5,14 +5,14 @@ const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const getIfNumberIsEven = (num) => {
   if (num % 2 === 0) {
-    return 'yes';
+    return true;
   }
-  return 'no';
+  return false;
 };
 
 function roundEven() {
   const randomNumber = getRandomNumber(1, 100);
-  const roundResult = getIfNumberIsEven(randomNumber);
+  const roundResult = getIfNumberIsEven(randomNumber) ? 'yes' : 'no';
   return { roundQuestion: randomNumber, roundResult };
 }
 

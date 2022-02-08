@@ -2,25 +2,27 @@ import gameProcess from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const gameTask = 'What is the roundResult of the expression?';
+const items = ['+', '-', '*'];
 
 const calculator = (numOne, numTwo, mathAction) => {
   switch (mathAction) {
     case '+':
-      return String(numOne + numTwo);
+      return numOne + numTwo;
     case '-':
-      return String(numOne - numTwo);
+      return numOne - numTwo;
     case '*':
-      return String(numOne * numTwo);
+      return numOne * numTwo;
     default:
-      return 'math action error';
+      throw new Error('Unknown order state!');
   }
 };
 export function calculatorRound() {
   const randomNumOne = getRandomNumber(1, 100);
   const randomNumTwo = getRandomNumber(1, 100);
-  const items = ['+', '-', '*'];
   const mathAction = items[getRandomNumber(0, items.length - 1)];
-  const roundResult = calculator(randomNumOne, randomNumTwo, mathAction);
+  const roundResult = String(
+    calculator(randomNumOne, randomNumTwo, mathAction),
+  );
   const roundQuestion = `${randomNumOne} ${mathAction} ${randomNumTwo}`;
   return { roundQuestion, roundResult };
 }
