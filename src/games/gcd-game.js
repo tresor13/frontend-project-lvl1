@@ -4,14 +4,14 @@ import getRandomNumber from '../getRandomNumber.js';
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
 const getGreatestDivider = (numOne, numTwo) => {
-  const commonDividers = [];
-  const smallestNumber = numOne < numTwo ? numOne : numTwo;
+  let greatestDivider = 0;
+  const smallestNumber = Math.min(numOne, numTwo);
   for (let divider = 1; divider <= smallestNumber; divider += 1) {
     if (numOne % divider === 0 && numTwo % divider === 0) {
-      commonDividers.push(divider);
+      greatestDivider = divider;
     }
   }
-  return commonDividers[commonDividers.length - 1];
+  return greatestDivider;
 };
 
 function roundGCD() {

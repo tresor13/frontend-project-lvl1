@@ -5,8 +5,8 @@ const gameTask = 'What number is missing in the progression?';
 
 function getProgression(num, diff) {
   const matrixOfValues = [num];
-  for (let numberOfValue = 0; numberOfValue < 9; numberOfValue += 1) {
-    const nextValue = matrixOfValues[numberOfValue] + diff;
+  for (let i = 0; i < 9; i += 1) {
+    const nextValue = matrixOfValues[i] + diff;
     matrixOfValues.push(nextValue);
   }
   return matrixOfValues;
@@ -15,12 +15,10 @@ function getProgression(num, diff) {
 export function progressionRound() {
   const originalNumber = getRandomNumber(1, 100);
   const differenceNum = getRandomNumber(1, 10);
-  const positionOfDeletedValue = Math.floor(Math.random() * 9);
+  const positionOfDeletedValue = getRandomNumber(0, 9);
   const progression = getProgression(originalNumber, differenceNum);
+  const roundResult = String(progression[positionOfDeletedValue]);
   progression[positionOfDeletedValue] = '..';
-  const roundResult = String(
-    originalNumber + positionOfDeletedValue * differenceNum,
-  );
   const roundQuestion = progression.join(' ');
   return { roundQuestion, roundResult };
 }
