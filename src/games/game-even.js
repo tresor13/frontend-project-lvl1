@@ -3,7 +3,7 @@ import getRandomNumber from '../getRandomNumber.js';
 
 const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const getIfNumberIsEven = (num) => {
+const isNumberEven = (num) => {
   if (num % 2 === 0) {
     return true;
   }
@@ -12,7 +12,7 @@ const getIfNumberIsEven = (num) => {
 
 function roundEven() {
   const randomNumber = getRandomNumber(1, 100);
-  const roundResult = getIfNumberIsEven(randomNumber) ? 'yes' : 'no';
+  const roundResult = isNumberEven(randomNumber) ? 'yes' : 'no';
   return { roundQuestion: randomNumber, roundResult };
 }
 
