@@ -4,7 +4,10 @@ import getRandomNumber from '../getRandomNumber.js';
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isNumberPrime = (num) => {
-  for (let divider = 2; divider <= num - 1; divider += 1) {
+  if (num < 2) {
+    return false;
+  }
+  for (let divider = 2; divider < num; divider += 1) {
     if (num % divider === 0) {
       return false;
     }

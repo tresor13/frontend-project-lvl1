@@ -5,7 +5,8 @@ const gameTask = 'What number is missing in the progression?';
 
 function getProgression(num, diff) {
   const matrixOfValues = [num];
-  for (let i = 0; i < 9; i += 1) {
+  const progressionLength = 9;
+  for (let i = 0; i < progressionLength; i += 1) {
     const nextValue = matrixOfValues[i] + diff;
     matrixOfValues.push(nextValue);
   }

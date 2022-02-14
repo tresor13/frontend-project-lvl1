@@ -19,10 +19,9 @@ export default function gameProcess(gameFunc, gameTask) {
         `"${userAnswer}" is a wrong answer ;(. Correct answer was "${roundResult}"`,
       );
       console.log(`Let's try again, ${userName}!`);
-      return null;
+      return;
     }
   }
 
   console.log(`Congratulations, ${userName}!`);
-  return true;
 }
